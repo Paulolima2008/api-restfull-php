@@ -1,0 +1,25 @@
+#Criado em: 12/03/2021
+#Autor: paulolima
+
+#Desativar navegação no diretório
+Options -Indexes
+
+#Definindo a página inicial do site
+DirectoryIndex view/dados/listar
+
+#redireciona o seu site de HTTP para HTTPS (SSL). Use apenas se você realmente tiver um SSL instalado
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://araujoseguros.com.br/$1 [R,L]
+
+#Remove extensões de arquivos das URLs
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+## Erro 404
+ErrorDocument 404 https://www.araujoseguros.com.br/404.php
+
+## Erro 403
+ErrorDocument 403 https://www.araujoseguros.com.br/

@@ -5,7 +5,7 @@ class Dados extends Conexao{
 		private $base64;
     private $data;
     private $hora;
-		
+
 		//gets e setter
 		//--------------------------------------------------------------
     public function getBase64(){
@@ -36,9 +36,9 @@ class Dados extends Conexao{
     public function insert($obj){
     	$sql = "INSERT INTO dados(base64,data,hora) VALUES (:base64,:data,:hora)";
     	$consulta = Conexao::prepare($sql);
-        $consulta->bindValue('base64',  $obj->base64);
-        $consulta->bindValue('data', $obj->data);
-        $consulta->bindValue('hora' , $obj->hora);
+      $consulta->bindValue('base64',  $obj->base64);
+      $consulta->bindValue('data', $obj->data);
+      $consulta->bindValue('hora' , $obj->hora);
     	return $consulta->execute();
 	}
 

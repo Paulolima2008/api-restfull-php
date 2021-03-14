@@ -1,0 +1,4 @@
+# ignorar o arquivo de configuração do banco de dados/
+conexao/config.php
+# ignorar o arquivo de informações do banco de dados/
+/info_base_de_dados.txt
